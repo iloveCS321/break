@@ -3,6 +3,18 @@
 <head>
     <META charset="UTF-8">
     <title>Website</title>
+    <style>
+        .shake {
+            animation: shake 0.2s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translate(2px, 2px);    }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(2px, -2px);  }
+            75% { transform: translate(-2px, 2px);  }
+            100% {tranform: translate(2px, 2px);    }
+        }
+    </style>
 </head>
 
  <script>
@@ -14,13 +26,13 @@
         }
         document.getElementById("anger").innerHTML = "Anger: " + anger + "%";
 
-         if (anger >=30){
+         if (anger >=30 && anger <100){
             document.body.style.backgroundColor = "lightgray"
         }
-        if (anger >=50){
+        if (anger >=50 && anger <100){
             document.querySelector("h1").innerHTML = "stop clicking"
         }
-        if (anger >=70){
+        if (anger >=70 && anger <100){
             document.querySelector("p").innerHTML = "this is your final warning"
         }
 
