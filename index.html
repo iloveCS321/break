@@ -14,11 +14,7 @@
         }
         document.getElementById("anger").innerHTML = "Anger: " + anger + "%";
 
-        if (anger ===100){
-            document.body.innerHTML = "<h1>you broke the website</h1>"
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "red";
-        if (anger >=30){
+         if (anger >=30){
             document.body.style.backgroundColor = "lightgray"
         }
         if (anger >=50){
@@ -27,6 +23,11 @@
         if (anger >=70){
             document.querySelector("p").innerHTML = "this is your final warning"
         }
+
+        if (anger ===100){
+            document.body.innerHTML = "<h1>you broke the website</h1>"
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "red";
         }
     }
 </script>
@@ -35,7 +36,7 @@
 
 
     <h1>Welcome</h1>
-    <p>2342</p>
+    <p>232</p>
     <h2 id="anger">Anger: 0%</h2>
     <button onclick="increaseAnger()">Click Me</button>
 
