@@ -18,7 +18,15 @@
             document.body.innerHTML = "<h1>you broke the website</h1>"
             document.body.style.backgroundColor = "black";
             document.body.style.color = "red";
-
+        if (anger >=30){
+            document.body.style.backgroundColor = "lightgray"
+        }
+        if (anger >=50){
+            document.querySelector("h1").innerHTML = "stop clicking"
+        }
+        if (anger >=70){
+            document.querySelector("p").innerHTML = "this is your final warning"
+        }
         }
     }
 </script>
@@ -27,7 +35,7 @@
 
 
     <h1>Welcome</h1>
-    <p>623</p>
+    <p>2342</p>
     <h2 id="anger">Anger: 0%</h2>
     <button onclick="increaseAnger()">Click Me</button>
 
