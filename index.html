@@ -9,7 +9,9 @@
     let anger = 0;
 
     function increaseAnger() {
+        if (anger <100){
         anger += 10;
+        }
         document.getElementById("anger").innerHTML = "Anger: " + anger + "%";
     }
 </script>
