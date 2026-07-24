@@ -12,7 +12,7 @@
             25% { transform: translate(-2px, -2px); }
             50% { transform: translate(2px, -2px);  }
             75% { transform: translate(-2px, 2px);  }
-            100% {tranform: translate(2px, 2px);    }
+            100% {transform: translate(2px, 2px);    }
         }
     </style>
 </head>
@@ -34,6 +34,7 @@
         }
         if (anger >=70 && anger <100){
             document.querySelector("p").innerHTML = "this is your final warning"
+                document.body.classList.add("shake");
         }
 
         if (anger ===100){
