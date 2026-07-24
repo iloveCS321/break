@@ -15,8 +15,6 @@ body {
 }
 
 
-/* website shaking */
-
 .shake {
     animation: shake 0.15s infinite;
 }
@@ -31,9 +29,6 @@ body {
 100% {transform:translate(0);}
 
 }
-
-
-/* glitch effect */
 
 .glitch {
 
@@ -69,10 +64,6 @@ transform:translate(0);
 }
 
 }
-
-
-
-/* falling website */
 
 .fall {
 
@@ -137,9 +128,6 @@ let message =
 document.getElementById("message");
 
 
-
-/* Stage 1 */
-
 if(anger >= 20){
 
 message.innerHTML =
@@ -150,9 +138,6 @@ title.innerHTML =
 
 }
 
-
-
-/* Stage 2 */
 
 if(anger >= 40){
 
@@ -168,9 +153,6 @@ message.innerHTML =
 }
 
 
-
-/* Stage 3 */
-
 if(anger >= 60){
 
 document.body.classList.add("shake");
@@ -184,10 +166,6 @@ glitchText();
 
 }
 
-
-
-/* Stage 4 */
-
 if(anger >=80){
 
 document.body.style.backgroundColor =
@@ -198,13 +176,12 @@ document.body.style.color =
 
 
 message.innerHTML =
-"this is your final warningn!";
+"this is your final warning!";
 
 }
 
 
 
-/* Final */
 
 if(anger ===100){
 
@@ -263,6 +240,28 @@ result;
 
 }
 
+let character = document.getElementById("character");
+
+
+if (anger >= 20){
+    character.innerHTML = "😐";
+}
+
+if (anger >= 40){
+    character.innerHTML = "😠";
+}
+
+if (anger >= 60){
+    character.innerHTML = "😡";
+}
+
+if (anger >= 80){
+    character.innerHTML = "🤬";
+}
+
+if (anger >= 100){
+    character.innerHTML = "💀";
+}
 
 
 </script>
@@ -278,7 +277,7 @@ result;
 
 <div id="character">
 
-(•_•)
+
 
 </div>
 
@@ -299,7 +298,7 @@ Anger: 0%
 
 
 <button onclick="increaseAnger()">
-Click Me
+Click Me!
 </button>
 
 
