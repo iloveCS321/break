@@ -1,0 +1,56 @@
+.glitch {
+    animation: glitch 0.2s infinite;
+}
+
+@keyframes glitch {
+
+0% {
+    transform: translate(0);
+}
+
+20% {
+    transform: translate(-5px,5px) skew(5deg);
+}
+
+40% {
+    transform: translate(5px,-5px) skew(-5deg);
+}
+
+60% {
+    transform: translate(-8px,0);
+}
+
+80% {
+    transform: translate(8px,3px);
+}
+
+100% {
+    transform: translate(0);
+}
+
+}
+
+
+.fall {
+    animation: fall 2s forwards;
+}
+
+
+@keyframes fall {
+
+0% {
+    transform: rotate(0);
+}
+
+100% {
+    transform: rotate(90deg) translateY(500px);
+    opacity:0;
+}
+
+}
+
+
+.corrupt {
+    filter: hue-rotate(90deg) blur(2px);
+}
+

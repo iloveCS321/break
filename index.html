@@ -1,67 +1,312 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <META charset="UTF-8">
-    <title>Website</title>
-    <style>
-        .shake {
-            animation: shake 0.2s infinite;
-        }
-        @keyframes shake {
-            0% { transform: translate(2px, 2px);    }
-            25% { transform: translate(-2px, -2px); }
-            50% { transform: translate(2px, -2px);  }
-            75% { transform: translate(-2px, 2px);  }
-            100% {transform: translate(2px, 2px);    }
-        }
-    </style>
+
+<meta charset="UTF-8">
+<title>Website</title>
+
+<style>
+
+body {
+    background-color:white;
+    font-family:Arial;
+    text-align:center;
+    transition:0.5s;
+}
+
+
+/* website shaking */
+
+.shake {
+    animation: shake 0.15s infinite;
+}
+
+
+@keyframes shake {
+
+0% {transform:translate(3px,3px);}
+25% {transform:translate(-3px,-2px);}
+50% {transform:translate(4px,-3px);}
+75% {transform:translate(-4px,3px);}
+100% {transform:translate(0);}
+
+}
+
+
+/* glitch effect */
+
+.glitch {
+
+animation: glitch 0.2s infinite;
+
+}
+
+
+@keyframes glitch {
+
+0% {
+transform:translate(0);
+}
+
+20% {
+transform:translate(-5px,3px);
+}
+
+40% {
+transform:translate(5px,-3px);
+}
+
+60% {
+transform:translate(-3px,5px);
+}
+
+80% {
+transform:translate(4px,-4px);
+}
+
+100% {
+transform:translate(0);
+}
+
+}
+
+
+
+/* falling website */
+
+.fall {
+
+animation:fall 2s forwards;
+
+}
+
+
+@keyframes fall {
+
+0% {
+transform:rotate(0deg);
+}
+
+100% {
+
+transform:
+translateY(600px)
+rotate(90deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+</style>
+
 </head>
 
- <script>
-    let anger = 0;
 
-    function increaseAnger() {
-        if (anger <100){
-        anger += 10;
-        }
-        document.getElementById("anger").innerHTML = "Anger: " + anger + "%";
 
-         if (anger >=30 && anger <100){
-            document.body.style.backgroundColor = "lightgray"
-        }
-        if (anger >=50 && anger <100){
-            document.querySelector("h1").innerHTML = "stop clicking"
-        }
-        if (anger >=70 && anger <100){
-            document.querySelector("p").innerHTML = "i said stop clicking"
-                document.body.classList.add("shake");
-        }
-         if (anger >=80 && anger <100){
-            document.querySelector("p").innerHTML = "you better stop now"
-                document.body.classList.add("shake");
-        }
-         if (anger >=90 && anger <100){
-            document.querySelector("p").innerHTML = "this is your final warning"
-                document.body.classList.add("shake");
-        }
+<script>
 
-        if (anger ===100){
-            document.body.innerHTML = "<h1>you broke the website</h1>"
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "red";
-        }
-    }
+let anger = 0;
+
+
+
+function increaseAnger(){
+
+
+if(anger < 100){
+
+anger += 10;
+
+}
+
+
+
+document.getElementById("anger").innerHTML =
+"Anger: " + anger + "%";
+
+
+
+let title =
+document.getElementById("title");
+
+
+let message =
+document.getElementById("message");
+
+
+
+/* Stage 1 */
+
+if(anger >= 20){
+
+message.innerHTML =
+"why did you click that";
+
+title.innerHTML =
+"my website";
+
+}
+
+
+
+/* Stage 2 */
+
+if(anger >= 40){
+
+document.body.style.backgroundColor =
+"#555";
+
+document.body.classList.add("glitch");
+
+
+message.innerHTML =
+"STOP BREAKING MY WEBSITE";
+
+}
+
+
+
+/* Stage 3 */
+
+if(anger >= 60){
+
+document.body.classList.add("shake");
+
+
+message.innerHTML =
+"YOU ARE CORRUPTING EVERYTHING";
+
+
+glitchText();
+
+}
+
+
+
+/* Stage 4 */
+
+if(anger >=80){
+
+document.body.style.backgroundColor =
+"black";
+
+document.body.style.color =
+"red";
+
+
+message.innerHTML =
+"THIS IS YOUR FINAL WARNING";
+
+}
+
+
+
+/* Final */
+
+if(anger ===100){
+
+
+document.getElementById("website")
+.classList.add("fall");
+
+
+setTimeout(()=>{
+
+
+document.body.innerHTML =
+"<h1>WEBSITE DESTROYED</h1>";
+
+document.body.style.backgroundColor =
+"black";
+
+document.body.style.color =
+"red";
+
+
+},2000);
+
+
+}
+
+
+
+}
+
+
+
+
+function glitchText(){
+
+
+let characters =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%";
+
+
+let result="";
+
+
+for(let i=0;i<15;i++){
+
+result += characters[
+Math.floor(Math.random()*characters.length)
+];
+
+}
+
+
+document.getElementById("title").innerHTML =
+result;
+
+
+}
+
+
+
 </script>
 
-<body>
-    <div id="character">(o-o)</div>
-<h1 id="title"></h1>
-<p id="message"></p>
 
-    <h1>WELCOME!</h1>
-    <p>earthquake test</p>
-    <h2 id="anger">Anger: 0%</h2>
-    <button onclick="increaseAnger()">Click Me</button>
+
+
+<body>
+
+
+<div id="website">
+
+
+<div id="character">
+
+(•_•)
+
+</div>
+
+
+<h1 id="title">
+Welcome
+</h1>
+
+
+<p id="message">
+Please don't click anything
+</p>
+
+
+<h2 id="anger">
+Anger: 0%
+</h2>
+
+
+<button onclick="increaseAnger()">
+Click Me
+</button>
+
+
+</div>
+
+
 
 </body>
+
 </html>
